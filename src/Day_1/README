@@ -1,0 +1,13 @@
+Day 1:
+
+Singly linked list learning
+	Learn about basic linked list
+	Learn about basic operations for singly linked list
+		->Insert an element in beginning
+		->Insert an element in the ending of the list
+		->Insert an element at some intermidiate position
+		->Removal of  elements  from the beginnning
+		->Removal of  elements  from the ending
+		->Removal of  elements  from some intermediate position
+		->Lenth of the linked list
+		->Display function for the linked list

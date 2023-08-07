@@ -184,7 +184,7 @@ public class SinglyLinkedList {
             linkedListElements.add(temp.getData());
             temp = temp.getNext();
         }
-        System.out.println(linkedListElements.size());
+        //System.out.println(linkedListElements.size());
         return linkedListElements;
     }
 
@@ -217,5 +217,12 @@ public class SinglyLinkedList {
     public void clearList() {
         head = null;
         length = 0;
+    }
+
+    //Insert a list of elements
+    public void insertElements(List<Integer> items) {
+        for (int i = 0; i < items.size(); i++) {
+            insertAtEnd(items.get(i));
+        }
     }
 }

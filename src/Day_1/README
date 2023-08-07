@@ -13,3 +13,4 @@ Singly linked list learning
 		->Display function for the linked list
 		->Removing all the elements 
 		->Finding a element at specfic position
+		->new constructor added for directly adding list elements

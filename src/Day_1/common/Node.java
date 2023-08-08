@@ -9,6 +9,9 @@ public class Node {
         return data;
     }
 
+    public Node() {
+    }
+
     public void setData(int data) {
         this.data = data;
     }

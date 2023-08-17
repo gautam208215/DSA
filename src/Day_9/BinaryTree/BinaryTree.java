@@ -119,30 +119,36 @@ public class BinaryTree {
         System.out.print(root.getData() + " ");
     }
 
-//    public ArrayList<Integer> postorderTraversal(BinaryTreeNode root) {
-//        ArrayList<Integer> list = new ArrayList<>();
-//        Stack<BinaryTreeNode> stack = new Stack<>();
-//        if (root == null) {
-//            return list;
-//        }
-//        BinaryTreeNode temp = root;
-//        boolean done = false;
-//        while (!done) {
-//            if (temp.getRight() != null) {
-//                stack.push(temp);
-//                temp = temp.getRight();
-//            } else {
-//                if (stack.isEmpty()) {
-//                    done = true;
-//                } else {
-//                    temp = stack.peek();
-//                    stack.push(temp.getLeft());
-//                    temp = temp.getLeft();
-//                }
-//            }
-//        }
-//        return list;
-//    }
+    public ArrayList<Integer> postorderTraversal(BinaryTreeNode root) {
+        ArrayList<Integer> list = new ArrayList<>();
+        Stack<BinaryTreeNode> stack = new Stack<>();
+        if (root == null) {
+            return list;
+        }
+        stack.push(root);
+        BinaryTreeNode prev = null;
+
+        while (!stack.isEmpty()) {
+            BinaryTreeNode current = stack.peek();
+            if (prev == null || prev.getLeft() == current || prev.getRight() == current) {
+                if (current.getLeft() != null) {
+                    stack.push(current.getLeft());
+                } else if (current.getRight() != null) {
+                    stack.push(current.getRight());
+                }
+            } else if (current.getLeft() == prev) {
+                if (current.getRight() != null) {
+                    stack.push(current.getRight());
+                }
+            } else {
+                list.add(current.getData());
+                stack.pop();
+            }
+            prev = current;
+        }
+        return list;
+    }
+
 
     @Override
     public String toString() {
